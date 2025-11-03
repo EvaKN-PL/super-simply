@@ -75,28 +75,8 @@ instance_type       = "t3.micro"
 vpc_cidr            = "10.0.0.0/16"
 public_subnet_cidrs = ["10.0.1.0/24"] 
 ```
-
-🛠️ Deployment Steps (Terraform Workflow)
-
-Follow these steps from the root directory of the project to deploy the infrastructure.
-
-1. Configure Variables
-
-Create a file named terraform.tfvars in the root directory and populate it with your environment-specific values.
-Terraform
-
-# terraform.tfvars
-# Environment Configuration
-aws_region          = "eu-central-1" 
-key_name            = "your-existing-ssh-key-name" # REQUIRED: Name of the key pair in AWS
-instance_type       = "t3.micro" 
-
-# Networking Configuration
-vpc_cidr            = "10.0.0.0/16"
-public_subnet_cidrs = ["10.0.1.0/24"]
-
 2. Initialization
 
 This command downloads the AWS provider and initializes the local modules (vpc, security, ec2).
 
-`terraform init`
+```terraform init```
