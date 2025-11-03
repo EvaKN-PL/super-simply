@@ -64,7 +64,7 @@ Before execution, ensure your environment meets these requirements:
 1. Configure Variables
 
 Create a file named terraform.tfvars in the root directory and populate it with your environment-specific values.
-
+```
 # terraform.tfvars
 # Environment Configuration
 aws_region          = "eu-central-1" 
@@ -73,6 +73,6 @@ instance_type       = "t3.micro"
 
 # Networking Configuration
 vpc_cidr            = "10.0.0.0/16"
-public_subnet_cidrs = ["10.0.1.0/24"]
-
+public_subnet_cidrs = ["10.0.1.0/24"] 
+```
 
