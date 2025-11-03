@@ -13,20 +13,9 @@ This repository contains Terraform code to provision a basic, highly modular web
 | Security     | Security Group   | An essential layer that acts as a stateful firewall for the EC2 instance, limiting exposure.     | modules/security |
 | Compute      | EC2 Instance     | The actual compute resource (t3.micro), running a self-installing web server.                   | modules/ec2      |
 
-`
-.
-├── main.tf           # Główna konfiguracja
-├── variables.tf      # Zmienne globalne
-├── output.tf         # Główne wyjścia (np. Publiczny IP EC2)
-└── modules/
-    ├── vpc/
-    │   ├── main.tf
-    │   ├── variables.tf
-    │   └── output.tf
-    ├── security/
-    │   ├── main.tf
-    │   └── variables.tf
-    └── ec2/
-        ├── main.tf
-        └── variables.tf `
+
+<img width="708" height="347" alt="diagram_super_simply" src="https://github.com/user-attachments/assets/b353596d-6ed9-4019-b419-d1cee25af3f0" />
+
+
+
         
