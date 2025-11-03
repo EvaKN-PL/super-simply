@@ -37,68 +37,6 @@ Focuses solely on the security layer:
 
     2. The SG configuration explicitly allows TCP 22 (SSH) and TCP 80 (HTTP) inbound traffic from anywhere (0.0.0.0/0), and allows all outbound traffic.
 
-
-      Zapytanie zostało przetworzone
-
-Rozumiem. Chcesz, abym w pliku README użył wyłącznie angielskich terminów do opisu struktury katalogów i plików Terraform.
-
-Oto poprawiona sekcja, która używa angielskich opisów dla plików i katalogów:
-
-🌟 Modular AWS Infrastructure: Single Web Server Deployment
-
-This repository showcases a structured and reusable approach to cloud infrastructure provisioning on Amazon Web Services (AWS) using Terraform. The core philosophy here is modularity, ensuring that networking, security, and compute layers are logically separated and easily maintainable.
-
-🏛️ Architectural Design & Flow
-
-This architecture provisions a foundational environment, suitable for small development or testing purposes. The central component is the Virtual Private Cloud (VPC), providing network isolation for our resources.
-Layer	Component	Description	Terraform Module
-Networking	VPC & IGW	The backbone (10.0.0.0/16). Includes the Internet Gateway for external connectivity.	modules/vpc
-Subnetting	Public Subnet	A single subnet (10.0.1.0/24) designed to host public-facing resources.	modules/vpc
-Security	Security Group	An essential layer that acts as a stateful firewall for the EC2 instance, limiting exposure.	modules/security
-Compute	EC2 Instance	The actual compute resource (t3.micro), running a self-installing web server.	modules/ec2
-
-📂 Project Directory Structure
-
-The project structure is organized modularly for better management and dependency clarity:
-
-.
-├── main.tf         # Main Configuration
-├── variables.tf    # Global Variables
-├── output.tf       # Main Outputs (e.g., EC2 Public IP)
-└── modules/
-    ├── vpc/
-    │   ├── main.tf
-    │   ├── variables.tf
-    │   └── output.tf
-    ├── security/
-    │   ├── main.tf
-    │   └── variables.tf
-    └── ec2/
-        ├── main.tf
-        └── variables.tf
-
-📦 Module Breakdown
-
-The infrastructure is broken down into three distinct modules, improving readability and future extensibility.
-
-1. modules/vpc
-
-Responsible for setting up the foundational network topology:
-
-    Creates the VPC.
-
-    Provisions the Internet Gateway and attaches it to the VPC.
-
-    Defines the Public Subnet and associates it with a Route Table directing external traffic through the IGW.
-
-2. modules/security
-
-Focuses solely on the security layer:
-
-    Creates a dedicated Security Group (SG).
-
-    The SG configuration explicitly allows TCP 22 (SSH) and TCP 80 (HTTP) inbound traffic from anywhere (0.0.0.0/0), and allows all outbound traffic.
-
 3. modules/ec2
 
 Handles the deployment of the compute resource:
