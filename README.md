@@ -13,8 +13,8 @@ This repository contains Terraform code to provision a basic, highly modular web
 | Security     | Security Group   | An essential layer that acts as a stateful firewall for the EC2 instance, limiting exposure.     | modules/security |
 | Compute      | EC2 Instance     | The actual compute resource (t3.micro), running a self-installing web server.                   | modules/ec2      |
 
+<img width="708" height="347" alt="super_simply_diagram" src="https://github.com/user-attachments/assets/b4c867e0-83f8-4c63-805b-ca0a65201d69" />
 
-<img width="708" height="347" alt="diagram_super_simply" src="https://github.com/user-attachments/assets/b353596d-6ed9-4019-b419-d1cee25af3f0" />
 
 
 
