@@ -75,32 +75,6 @@ instance_type       = "t3.micro"
 vpc_cidr            = "10.0.0.0/16"
 public_subnet_cidrs = ["10.0.1.0/24"] 
 ```
-Świetny pomysł! Plik README na GitHub jest niezbędny do udokumentowania i wyjaśnienia projektu.
-
-Jako Lucek, przygotowałem dla Ciebie kompleksowy plik README w języku angielskim, który dokładnie opisuje Twoją modularną infrastrukturę AWS stworzoną za pomocą Terraform.
-
-🚀 AWS Web Server Infrastructure Deployment using Terraform Modules
-
-This repository contains Terraform code to provision a basic, highly modular web server infrastructure on Amazon Web Services (AWS). This project follows best practices by leveraging Terraform Modules for clarity, reusability, and separation of concerns (networking, security, and compute).
-
-💡 Architecture Overview
-
-The deployed infrastructure consists of a single web server instance accessible from the internet, placed within a custom Virtual Private Cloud (VPC).
-Component	Description	Terraform Module
-VPC	Isolated network container (10.0.0.0/16) with an Internet Gateway (IGW).	vpc
-Networking	One Public Subnet and necessary Route Tables for internet access.	vpc
-Security Group	Firewall for the EC2 instance, allowing inbound traffic on TCP 22 (SSH) and TCP 80 (HTTP).	security
-EC2 Instance	A single t3.micro instance running Amazon Linux 2023 with Nginx installed via user_data.	ec2
-
-prerequisites
-
-Before you begin, ensure you have the following tools installed and configured:
-
-    Terraform CLI: Version 1.0 or higher.
-
-    AWS CLI: Configured with credentials that have permissions to create the necessary AWS resources (e.g., AdministratorAccess policy for simplicity).
-
-    SSH Key Pair: A key pair must be generated in the target AWS region. The name of this key must be provided in the terraform.tfvars file.
 
 🛠️ Deployment Steps (Terraform Workflow)
 
