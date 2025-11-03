@@ -110,3 +110,12 @@ terraform output instance_public_ip
 ```bash
 ssh -i /path/to/your/key.pem ec2-user@public_ip_ec2_instance
 ```
+🧹 Cleanup
+
+To destroy all deployed AWS resources and avoid unnecessary charges, run the following command. Type yes when prompted.
+```bash
+terraform destroy
+```
+📜 License
+
+This project is open-source under the MIT License. Feel free to use and adapt it for your own serverless needs.
