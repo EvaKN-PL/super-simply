@@ -89,4 +89,24 @@ Review the proposed changes. Terraform will show you exactly what will be create
 ```bash
 terraform plan
 ```
+4. Apply the Configuration
 
+Execute the plan to provision the resources. Type yes when prompted.
+
+```bash
+terraform apply
+```
+🌐 Accessing the Web Server
+
+After a successful terraform apply, the public IP address of the EC2 instance will be displayed in the output.
+
+1. Get the Public IP:
+
+```bash
+terraform output instance_public_ip
+```
+2. Access HTTP: Open the public IP in a web browser. You should see the Nginx welcome page.
+3. Connect via SSH: Use your private key file (.pem) to connect.
+```bash
+ssh -i /path/to/your/key.pem ec2-user@public_ip_ec2_instance
+```
