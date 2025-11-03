@@ -81,3 +81,12 @@ This command downloads the AWS provider and initializes the local modules (vpc, 
 
 ```bash
 terraform init
+```
+3. Review the Plan
+
+Review the proposed changes. Terraform will show you exactly what will be created in your AWS account.
+
+```bash
+terraform plan
+```
+
