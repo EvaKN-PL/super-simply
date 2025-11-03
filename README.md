@@ -23,7 +23,7 @@ The infrastructure is broken down into three distinct modules, improving readabi
 
 Responsible for setting up the foundational network topology:
 
-    1. Creates the VPC.
+    1. Create the VPC.
 
     2. Provisions the Internet Gateway and attaches it to the VPC.
 
@@ -59,3 +59,20 @@ Before execution, ensure your environment meets these requirements:
     3. SSH Key Pair: An SSH key must be created in your target AWS region and its name specified in terraform.tfvars.
 
     4. .gitignore: Ensure your sensitive file (terraform.tfvars) is excluded from version control.
+
+🛠️ Deployment Steps (Terraform Workflow)
+1. Configure Variables
+
+Create a file named terraform.tfvars in the root directory and populate it with your environment-specific values.
+
+# terraform.tfvars
+# Environment Configuration
+aws_region          = "eu-central-1" 
+key_name            = "your-existing-ssh-key-name" # REQUIRED: Name of the key pair in AWS
+instance_type       = "t3.micro" 
+
+# Networking Configuration
+vpc_cidr            = "10.0.0.0/16"
+public_subnet_cidrs = ["10.0.1.0/24"]
+
+
