@@ -12,3 +12,22 @@ This repository contains Terraform code to provision a basic, highly modular web
 | Subnetting   | Public Subnet    | A single subnet (10.0.1.0/24) designed to host public-facing resources.                         | modules/vpc      |
 | Security     | Security Group   | An essential layer that acts as a stateful firewall for the EC2 instance, limiting exposure.     | modules/security |
 | Compute      | EC2 Instance     | The actual compute resource (t3.micro), running a self-installing web server.                   | modules/ec2      |
+
+'''
+.
+├── main.tf           # Główna konfiguracja
+├── variables.tf      # Zmienne globalne
+├── output.tf         # Główne wyjścia (np. Publiczny IP EC2)
+└── modules/
+    ├── vpc/
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   └── output.tf
+    ├── security/
+    │   ├── main.tf
+    │   └── variables.tf
+    └── ec2/
+        ├── main.tf
+        └── variables.tf
+
+'''
