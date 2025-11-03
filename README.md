@@ -79,4 +79,4 @@ public_subnet_cidrs = ["10.0.1.0/24"]
 
 This command downloads the AWS provider and initializes the local modules (vpc, security, ec2).
 
-<pre> ```bash terraform init ``` </pre>
+<pre> terraform init </pre>
